@@ -38,10 +38,10 @@ class Cocktail extends Component {
             <div>
               <table>
                 <thead>
-                  <th>
-                    <td></td>
-                    <td></td>
-                  </th>
+                  <tr>
+                    <th>Measure</th>
+                    <th>Ingredient</th>
+                  </tr>
                 </thead>
                 <tbody>
                   <tr>
