@@ -1,11 +1,58 @@
 body {
+  background-color: lightyellow;
   margin: 0;
+  padding: 16px;
   font-family: 'Roboto Slab', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: left;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: #2586DD;
+}
+
+.cocktail-h1-title {
+  margin-top: 0;
+}
+
+.cocktail-h1-title,
+.cocktail-title {
+  color: #1A64A7;
+}
+
+.cocktail-cover-img {
+  height: 128px;
+  width: 128px;
+}
+
+.cocktail-img {
+  max-height: 350px;
+  max-width: 100%;
+}
+
+.cocktail-table {
+  empty-cells: hide;
+  text-align: left;
+}
+
+.cocktail-table th,
+.cocktail-table td {
+  padding: 8px;
+}
+
+.cocktail-table tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+
+td:empty {
+  visibility: hidden;
 }
