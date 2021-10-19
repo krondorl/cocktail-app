@@ -24,7 +24,7 @@ class Cocktail extends Component {
   }
 
   search = () => {
-    fetch('/api/cocktail?mode=search' + this.state.value)
+    fetch('/api/cocktail?mode=search&name=' + this.state.value)
     .then(res => res.json())
     .then(cocktail => {
       this.setState({ cocktail: cocktail });
