@@ -102,7 +102,8 @@ class Cocktail extends Component {
                   </tbody>
                 </table>
               </div>
-              <h2></h2>
+              <h2>Instructions</h2>
+              <p>{this.state.cocktail.drinks[0].strInstructions}</p>
             </div>
             ) : (
               <div>
