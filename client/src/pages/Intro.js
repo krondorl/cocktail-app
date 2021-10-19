@@ -7,7 +7,10 @@ class Intro extends Component {
     <div className="App">
       <h1>Welcome to Cocktail App</h1>
       <div>
-        <Link to="/cocktail">Enter</Link>
+        <img className="cocktail-cover-img" alt="Cocktail" src="cocktails.png"/>
+      </div>
+      <div>
+        <Link to="/cocktail" className="enter">Enter webpage</Link>
       </div>
     </div>
     );
