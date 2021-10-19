@@ -4,11 +4,13 @@ class Cocktail extends Component {
   constructor(props){
     super(props);
     this.state = {
-      cocktail: []
+      cocktail: [],
+      value: ''
     }
   }
 
   componentDidMount() {
+    this.setState({ value: 'vodka' });
     this.random();
   }
 
@@ -17,8 +19,21 @@ class Cocktail extends Component {
     .then(res => res.json())
     .then(cocktail => {
       this.setState({ cocktail: cocktail });
-      console.log(cocktail)
+      console.log(cocktail);
     });
+  }
+
+  search = () => {
+    fetch('/api/cocktail?mode=search' + this.state.value)
+    .then(res => res.json())
+    .then(cocktail => {
+      this.setState({ cocktail: cocktail });
+      console.log(cocktail);
+    });
+  }
+
+  handleChange = (event) => {
+    this.setState({ value: event.target.value });
   }
 
   render() {
