@@ -41,6 +41,11 @@ a:active {
   margin-top: 48px;
 }
 
+.cocktail-container {
+  margin: 0;
+  padding: 0;
+}
+
 .cocktail-h1-title {
   margin-top: 0;
 }
