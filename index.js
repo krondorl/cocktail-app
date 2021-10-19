@@ -17,7 +17,7 @@ app.get('/api/cocktail', (req, res) => {
             .then(response => res.json(response.data))
             .catch(err => console.log(err));
     } else if (apiMode === 'search' && searchName.length > 0) {
-        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?i=' + searchName)
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + searchName)
             .then(response => res.json(response.data))
             .catch(err => console.log(err));
     }
