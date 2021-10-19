@@ -16,8 +16,10 @@ app.get('/api/cocktail', (req, res) => {
         axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
             .then(response => res.json(response.data))
             .catch(err => console.log(err));
-    } else if (apiMode === 'search') {
-        res.send(searchName)
+    } else if (apiMode === 'search' && searchName.length > 0) {
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/search.php?i=' + searchName)
+            .then(response => res.json(response.data))
+            .catch(err => console.log(err));
     }
 });
 
@@ -29,4 +31,4 @@ app.get('/api/cocktail', (req, res) => {
 const port = process.env.PORT || 5000;
 app.listen(port);
 
-console.log('App is listening on port ' + port);
+console.log('Cocktail app is listening on port ' + port);
