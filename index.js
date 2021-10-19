@@ -5,19 +5,26 @@ const axios = require('axios');
 const app = express();
 
 // Serve the static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.static(path.join(__dirname, 'client/build')));
 
 // An api endpoint that returns a short list of items
-app.get('/api/cocktail', (req,res) => {
-    axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
-        .then(data => res.json(data))
-        .catch(err => next(err));
+app.get('/api/cocktail', (req, res) => {
+    let apiMode = req.query.mode;
+    let searchName = req.query.name;
+
+    if (apiMode === 'random') {
+        axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
+            .then(response => res.json(response.data))
+            .catch(err => console.log(err));
+    } else if (apiMode === 'search') {
+        res.send(searchName)
+    }
 });
 
 // Handles any requests that don't match the ones above
-app.get('*', (req,res) =>{
-    res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
+// app.get('*', (req, res) =>{
+//     res.sendFile(path.join(__dirname + '/client/build/index.html'));
+// });
 
 const port = process.env.PORT || 5000;
 app.listen(port);
