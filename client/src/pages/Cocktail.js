@@ -49,7 +49,7 @@ class Cocktail extends Component {
           <input type="text" value={this.state.value} onChange={this.handleChange} />
           <button onClick={this.search}>Search</button>
         </div>
-        <div>
+        <div className="cocktail-result-container">
           {this.state.cocktail?.drinks ? (
             <div>
               <h2 className="cocktail-title">{this.state.cocktail.drinks[0].strDrink}</h2>
@@ -102,6 +102,7 @@ class Cocktail extends Component {
                   </tbody>
                 </table>
               </div>
+              <h2></h2>
             </div>
             ) : (
               <div>
