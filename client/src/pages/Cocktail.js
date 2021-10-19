@@ -25,7 +25,8 @@ class Cocktail extends Component {
     return (
     <div className="App">
       <header className="header">
-        <h1>Cocktail App</h1>
+        <h1 className="cocktail-h1-title">Cocktail App</h1>
+        <img className="cocktail-cover-img" alt="Cocktail" src="cocktails.png"/>
       </header>
       <main className="main">
         <div>
@@ -37,7 +38,7 @@ class Cocktail extends Component {
           {this.state.cocktail?.drinks ? (
             <div>
               <h2 className="cocktail-title">{this.state.cocktail.drinks[0].strDrink}</h2>
-              <div><img className="cocktail-img" alt={this.state.cocktail.drinks[0].strDrink} src={this.state.cocktail.drinks[0].strDrinkThumb} /></div>
+              <figure className="cocktail-container"><img className="cocktail-img" alt={this.state.cocktail.drinks[0].strDrink} src={this.state.cocktail.drinks[0].strDrinkThumb} /></figure>
               <div>
                 <table className="cocktail-table">
                   <thead>
