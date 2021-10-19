@@ -9,8 +9,8 @@ class App extends Component {
     const App = () => (
       <div>
         <Switch>
-          <Route exact path='/' component={Intro}/>
           <Route path='/cocktail' component={Cocktail}/>
+          <Route exact path='/' component={Intro}/>
         </Switch>
       </div>
     )
